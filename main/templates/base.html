@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{% block title %}Home Page{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bs4/bootstrap.min.css' %}" />
+	<script type="text/javascript" src="{% static 'vendor/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static '/vendor/bs4/bootstrap.min.js' %}"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid"> <a class="navbar-brand fw-bold" href="#"> <span class="border"> WEB</span> <span class="noborder">EWER</span></a> <button
+					class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span
+						class="navbar-toggler-icon"></span> </button>
+				<div style="padding-right: 150px;" class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav d-flex justify-content-center w-100">
+						<li class="nav-item"> <a class="nav-link" href="/">Anasayfa</a> </li>
+						<li class="nav-item"> <a class="nav-link" href="{% url 'all-news' %}">Gündem</a> </li>
+						<li class="nav-item"> <a class="nav-link" href="{% url 'all-category' %}">Kategoriler</a> </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<style>
+		url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;800&display=swap");
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: "Heebo", sans-serif;
+		}
+		.border {
+			background-color: #1da1f2;
+			border-radius: 10%;
+			padding: 0 5px;
+		}
+		.noborder {
+			color: white;
+		
+		}
+
+		body {
+			overflow-x: hidden;
+		}
+
+		div.banner {
+			width: 100%;
+			min-height: 100vh;
+			background-image: url(https://cdn.wallpapersafari.com/33/7/ZmRcgk.jpg);
+			background-position: center;
+			background-attachment: fixed;
+			background-size: cover;
+			background-repeat: no-repeat;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		div.banner>h1 {
+			font-size: 4.6em;
+			font-weight: 800;
+			color: #fff;
+			text-shadow: 4px 4px 30px rgba(0, 0, 0, 0.8);
+		}
+
+		div.banner>h2 {
+			color: #fff;
+			font-size: 1.8em;
+			letter-spacing: 2px;
+		}
+
+		div.content-area {
+			width: 100%;
+			min-height: 100vh;
+		}
+	</style>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+
+
+	{% block content %}
+	{% endblock %}
+
+	<hr />
+	<footer>
+		<div class="social">
+		  <p>Bize Ulaşın</p>
+		  <ul class="wrapper">
+			<a href="https://www.linkedin.com/company/trair/" target="_blank">
+			  <li class="icon linkedin">
+				<span class="tooltip">LinkedIn</span>
+				<span><i class="fab fa-linkedin"></i></span>
+			  </li>
+			</a>
+			<a href="#" target="_blank">
+			  <li class="icon facebook">
+				<span class="tooltip">Facebook</span>
+				<span><i class="fab fa-facebook-f"></i></span>
+			  </li>
+			</a>
+			<a href="https://www.instagram.com/webewer_tr/" target="_blank">
+			  <li class="icon instagram">
+				<span class="tooltip">Instagram</span>
+				<span><i class="fab fa-instagram"></i></span>
+			  </li>
+			</a>
+			<a href="#" target="_blank">
+			  <li class="icon twitter">
+				<span class="tooltip">Twitter</span>
+				<span><i class="fab fa-twitter"></i></span>
+			  </li>
+			</a>
+		
+		  </ul>
+		</div>
+		<div class="final_text"></div>
+		<p class="text-center"> © TrAir Teknoloji Yatırımları A.Ş <br> Baştürk Holding İştirakıdır.
+		</p>
+	  </footer>
+	  <style>
+	    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+		@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+		
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		}
+		
+		*:focus,
+		*:active {
+		  outline: none !important;
+		  -webkit-tap-highlight-color: transparent;
+		}
+		
+		footer {
+		  font-family: "Poppins", sans-serif;
+		  position: relative;
+		  bottom: 0px;
+		  width: 100%;
+		  display: flex;
+		  align-items: center;
+		  justify-content: space-between;
+		  flex-direction: column;
+		  padding: 20px 0px;
+		  background: rgb(0, 0, 15);
+		  border-top: aliceblue 5px solid;
+		}
+		
+		p {
+		  color: aliceblue;
+		}
+		
+		.social {
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		}
+		
+		.wrapper {
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  padding-bottom: 40px;
+		}
+		
+		.wrapper .icon {
+		  position: relative;
+		  background: aliceblue;
+		  color: rgb(0, 0, 15);
+		  border-radius: 50%;
+		  margin: 10px;
+		  width: 50px;
+		  height: 50px;
+		  font-size: 18px;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  flex-direction: column;
+		  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+		  cursor: pointer;
+		  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		}
+		
+		.wrapper .tooltip {
+		  position: absolute;
+		  top: 0;
+		  font-size: 14px;
+		  background: aliceblue;
+		  color: aliceblue;
+		  font-family: "Poppins", sans-serif;
+		  padding: 5px 8px;
+		  border-radius: 5px;
+		  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+		  opacity: 0;
+		  pointer-events: none;
+		  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		}
+		
+		.wrapper .tooltip::before {
+		  position: absolute;
+		  content: "";
+		  height: 8px;
+		  width: 8px;
+		  background: aliceblue;
+		  top: -3px;
+		  left: 50%;
+		  transform: translate(-50%) rotate(45deg);
+		  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		}
+		
+		.wrapper .icon:hover .tooltip {
+		  top: 60px;
+		  opacity: 1;
+		  visibility: visible;
+		  pointer-events: auto;
+		}
+		
+		.wrapper .icon:hover span,
+		.wrapper .icon:hover .tooltip {
+		  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+		}
+		
+		.wrapper .linkedin:hover,
+		.wrapper .linkedin:hover .tooltip,
+		.wrapper .linkedin:hover .tooltip::before {
+		  background: #0077b5;
+		  color: aliceblue;
+		}
+		
+		.wrapper .facebook:hover,
+		.wrapper .facebook:hover .tooltip,
+		.wrapper .facebook:hover .tooltip::before {
+		  background: #4267b2;
+		  color: aliceblue;
+		}
+		
+		.wrapper .twitter:hover,
+		.wrapper .twitter:hover .tooltip,
+		.wrapper .twitter:hover .tooltip::before {
+		  background: #1da1f2;
+		  color: aliceblue;
+		}
+		
+		.wrapper .instagram:hover,
+		.wrapper .instagram:hover .tooltip,
+		.wrapper .instagram:hover .tooltip::before {
+		  background: radial-gradient(
+			circle at 30% 107%,
+			#fdf497 0%,
+			#fdf497 5%,
+			#fd5949 45%,
+			#d6249f 60%,
+			#285aeb 90%
+		  );
+		  color: aliceblue;
+		}
+		
+	
+		</style>
+
+
+</body>
+
+</html>
